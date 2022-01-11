@@ -9,7 +9,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -21,12 +21,12 @@ public class TasksTest {
 //		String valorGerado = String.valueOf(gerador.nextInt(100) + 9200);
 		
 		
-//		ChromeOptions options = new ChromeOptions();
+		ChromeOptions options = new ChromeOptions();
 //		options.addArguments(String.format("--remote-debugging-port=%s", valorGerado));
-//		options.setHeadless(true);
+		options.setHeadless(true);
 //		WebDriver driver = new ChromeDriver(options);
 		DesiredCapabilities cap = DesiredCapabilities.chrome();
-//		cap.setCapability(ChromeOptions.CAPABILITY, options);
+		cap.setCapability(ChromeOptions.CAPABILITY, options);
 		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
 		return driver;
 	}
